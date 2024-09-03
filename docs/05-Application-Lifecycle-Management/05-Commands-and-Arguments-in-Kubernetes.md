@@ -18,6 +18,8 @@ In this section, we will take a look at commands and arguments in kubernetes
      args: ["10"]
   ```
   ![args](../../images/args.PNG)
+
+  !!! The ENTRYPOINT in the Dockerfile is overridden by the command in the pod definition file.
   
 #### K8s Reference Docs
 - https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/
