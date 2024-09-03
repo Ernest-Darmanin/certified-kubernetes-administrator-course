@@ -57,7 +57,7 @@ ENTRYPOINT ["sleep"]
 ```
 
 ```
-docker run ubuntu-sleeper **10**
+docker run ubuntu-sleeper 10
 ```
 
 - Notice that since we have an ENTRYPOINT, the file is expecting to have a CMD input in the execution command. 
