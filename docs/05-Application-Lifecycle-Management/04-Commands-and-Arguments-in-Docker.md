@@ -51,5 +51,15 @@ In this section, we will take a look at commands and arguments in docker
 ## Entrypoint Instruction
 - The entrypoint instruction is like the command instruction as in you can specify the program that will be run when the container starts and whatever you specify on the command line.
 
+```
+FROM Ubuntu
+ENTRYPOINT ["sleep"]
+```
+
+```
+docker run ubuntu-sleeper **10**
+```
+
+- Notice that since we have an ENTRYPOINT, the file is expecting to have a CMD input in the execution command. 
 #### K8s Reference Docs
 - https://docs.docker.com/engine/reference/builder/#cmd
