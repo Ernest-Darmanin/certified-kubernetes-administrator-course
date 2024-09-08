@@ -82,7 +82,40 @@ In this section, we will take a look at configuring configmaps in applications
  - You can inject it as a file in a **`Volume`**
  
    ![cmp1](../../images/cmp1.PNG)
-   
+
+ ### The following is an example of a Pod definition file using a ConfgMap to map APP_COLOR
+ **`Pod Definition - webapp-definition.yml`**
+   ```
+   ---
+   apiVersion: v1
+   kind: Pod
+   metadata:
+     labels:
+       name: webapp-color
+     name: webapp-color
+     namespace: default
+   spec:
+     containers:
+     - env:
+       - name: APP_COLOR
+         valueFrom:
+          configMapKeyRef:
+            name: webapp-config-map
+            key: APP_COLOR
+       image: kodekloud/webapp-color
+       name: webapp-color
+   ```
+**`ConfigMap Definition - webapp-config.yml`**
+  ```
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: null
+    name: webapp-config-map
+  data:
+    APP_COLOR: darkblue
+    APP_OTHER: disregard
+  ```
  #### K8s Reference Docs
  - https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/
  - https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#define-container-environment-variables-using-configmap-data
