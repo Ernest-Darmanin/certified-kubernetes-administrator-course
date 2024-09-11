@@ -14,6 +14,8 @@ You can do this by exporting the variable ETCDCTL_API prior to using the etcdctl
 
 On the **Master Node**:
 
+![etcd](../../images/06-08-1-etcd.png)
+
 To see all the options for a specific sub-command, make use of the **-h or --help** flag.
 
 
